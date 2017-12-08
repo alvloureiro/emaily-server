@@ -8,4 +8,7 @@ const requestHandler = (request, response) => {
 }
 
 app.get('/', requestHandler);
-app.listen(5000, () => console.log('Server application running on port 5000'));
+
+const SERVER_PORT = process.env.PORT || 5000;
+
+app.listen(SERVER_PORT, () => console.log(`Server application running on port ${SERVER_PORT}`));
