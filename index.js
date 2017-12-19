@@ -1,13 +1,6 @@
-const express = require('express');
-const app = express();
-
-const requestHandler = (request, response) => {
-  response.send({
-    hi: 'there'
-  });
-}
-
-app.get('/', requestHandler);
+const app = require('express')();
+require('./services/passport.js');
+require('./routes/authRoutes')(app);
 
 const SERVER_PORT = process.env.PORT || 5000;
 
